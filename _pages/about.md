@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-_~ analyst ~ engineer ~ designer ~ economics + reading enthusiast ~_
+_| analyst | engineer | designer | economics | reading enthusiast |_
 
 
 1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
