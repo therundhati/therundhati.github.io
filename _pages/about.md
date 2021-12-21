@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-_- analyst - designer - economics+reading enthusiast_
+_- analyst - engineer - designer - economics+reading enthusiast_
 
 ======
 Welcome to my webpage!
