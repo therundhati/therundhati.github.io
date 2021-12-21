@@ -1,6 +1,6 @@
 ---
 title: "Technikalyug"
-excerpt: "A visual interpretation of Vision 2040 for the Science & Technology Innovation Policy 2021 <br/><img src='/images/technikalyug.png' width: '400px' height: '400px'>"
+excerpt: "A visual interpretation of Vision 2040 for the Science & Technology Innovation Policy 2021 <br/><img src='/images/technikalyug.png'>"
 ---
 
 Our (Animesh and mine) entry to the [Science & Technology Innovation Policy 2021](https://thesciencepolicyforum.org/ideathon-result-announcement/) won the first position and has been chosen as an addition to the policy draft by the Office of the Principal Scientific Advisor, Government of India. <br \>
