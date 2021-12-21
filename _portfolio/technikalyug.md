@@ -1,6 +1,6 @@
 ---
 title: "Technikalyug"
-excerpt: "A visual interpretation of Vision 2040 for the Science & Technology Innovation Policy 2021 <br/><img src='/images/technikalyug.png' width: 400px, height: auto>"
+excerpt: "A visual interpretation of Vision 2040 for the Science & Technology Innovation Policy 2021 <br/><img src='/images/technikalyug.png' width: '400px' height: auto>"
 collection: portfolio
 ---
 
