@@ -8,15 +8,16 @@ redirect_from:
   - /about.html
 ---
 
-_| analyst | engineer | designer | economics | reading enthusiast |_
+_* analyst * engineer * designer * economics + reading enthusiast *_ <br />
+
+I am working as an Analyst at American Express as an Analyst. I work with the Risk Management team on building rules, strategies, treatment procedures and risk scores/models for new accounts, transactions and payments for the Corporate portfolio, Global Markets. <br />
+
+I graduated from IIT Delhi in 2020, majoring in Mechanical Engineering with a minor Specialisation in Economics. I have a strong foundation in programming, and I have always gravitated towards math and logic because of their ubiquity and my innate fondness for the intellectual challenge they pose. During the course of my undergraduate degree, I was fortunate to be advised by [Prof. Nomesh Bolia](https://web.iitd.ac.in/~nomesh/) for my B.Tech thesis, [Prof. Saptarshi Mukherjee] (https://hss.iitd.ac.in/faculty/saptarshi-mukherjee) and [Prof. SB Paul](https://hss.iitd.ac.in/faculty/sourabh-b-paul) for courses and projects in Economics, and [Prof. Anant Agarwal](https://ece.osu.edu/people/agarwal.334) at OSU for my summer research internship at the High Voltage and Power Electronics lab. I had an enriching experience as a Summer Analyst with the Cost Engineerring department at Daimler AG in Kawasaki, Japan during my third year. <br />
+
+A couple of new projects that I am working on include Evaluating Ethics in HCI, particularly dark patterns, guided by [Prof. Jyoti Kumar](https://design.iitd.ac.in/jyoti-kumar.html), and microeconomic analysis of platform design.
 
 
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
 
-Thank you for visiting! Drop a mail for potential conversations/collaborations around common interests :)
-======
+ <br />
+ 
+Thank you for visiting! Drop a mail for potential conversations/collaborations around common interests, I'd be extremely happy to exchange or pursue new perspectives :)
