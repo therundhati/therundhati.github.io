@@ -44,48 +44,47 @@ Scholastic Achievements
 
 Coursework
 ======
-_Mechanical Engineering and Math_
-• Probability and Statistics
-• Operations Research
-• Numerical Methods and Computation
-• Linear Algebra and Differential Equations
-• Calculus
-• Design & Innovation Methods
-_Economics_
-• Macroeconomics
-• Advanced Microeconomics
-• Econometric Methods
-• Applied Game Theory
-• Time Series Econometrics & Forecasting
-• Global Political Economy
-• Political Development of Economy
-_Computer Science_
-• Introduction to Computer Science
-• Data Structures & Algorithms
-• Machine Intelligence and Learning
-_MOOCs in Finance and Programming_
-• Deep Learning Specialisation*
-• Machine Learning*
-• Corporate Finance*
-• Fundamentals of Finance*
-• Financial Accounting*
-• C++ for C Programmers, A & B*
-• Advanced R Programming*
-• Advanced R for Data Science**
-• Excel Data Analysis and Dashboard Reporting**
-• Statistics for Data Science**
-• SAS Programming Essentials
-(* Coursera, ** Udemy)
+* _Mechanical Engineering and Math_
+  * Probability and Statistics
+  * Operations Research
+  * Numerical Methods and Computation
+  * Linear Algebra and Differential Equations
+  * Calculus
+  * Design & Innovation Methods
+* _Economics_
+  * Macroeconomics
+  * Advanced Microeconomics
+  * Econometric Methods
+  * Applied Game Theory
+  * Time Series Econometrics & Forecasting
+  * Global Political Economy
+  * Political Development of Economy
+* _Computer Science_
+  * Introduction to Computer Science
+  * Data Structures & Algorithms
+  * Machine Intelligence and Learning
+* _MOOCs in Finance and Programming_ (* Coursera, ** Udemy)
+  * Deep Learning Specialisation*
+  * Machine Learning*
+  * Corporate Finance*
+  * Fundamentals of Finance*
+  * Financial Accounting*
+  * C++ for C Programmers, A & B*
+  * Advanced R Programming*
+  * Advanced R for Data Science**
+  * Excel Data Analysis and Dashboard Reporting**
+  * Statistics for Data Science**
+  * SAS Programming Essentials
 
 Extracurricular Activities
 ======
-Awarded for Cumulative Outstanding Contribution to Cultural Activities, IIT Delhi (2020)
-Awarded for Outstanding Contribution to Board for Student Publications, IIT Delhi (2020)
-Student Volunteer with Jean Dreze for evidence based national policy design (2019)
-Chief Editor, Creative and Journalism, Board for Student Publications, IIT Delhi (2018-19)
-Exchange Buddy, International Programmes, mentoring exchange students on campus (2018)
-Quizzing Club Representative, Inter IIT 2nd position, 2nd in League quizzing (2017)
-Senior Diploma in Kathak, Prayag Sangeet Samiti with 8 years of professional training (2015)
+* Awarded for Cumulative Outstanding Contribution to Cultural Activities, IIT Delhi (2020)
+* Awarded for Outstanding Contribution to Board for Student Publications, IIT Delhi (2020)
+* Student Volunteer with Jean Dreze for evidence based national policy design (2019)
+* Chief Editor, Creative and Journalism, Board for Student Publications, IIT Delhi (2018-19)
+* Exchange Buddy, International Programmes, mentoring exchange students on campus (2018)
+* Quizzing Club Representative, Inter IIT 2nd position, 2nd in League quizzing (2017)
+* Senior Diploma in Kathak, Prayag Sangeet Samiti with 8 years of professional training (2015)
 
 Publications
 ======
@@ -93,12 +92,12 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+<> Teaching
+<> ======
+ <> <ul>{% for post in site.teaching %}
+ <>   {% include archive-single-cv.html %}
+ <> {% endfor %}</ul>
   
-# Service and leadership
-# ======
-# * Currently signed in to 43 different slack teams
+<> Service and leadership
+<> ======
+<> Currently signed in to 43 different slack teams
