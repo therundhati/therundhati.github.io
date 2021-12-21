@@ -78,12 +78,12 @@ Coursework
 
 Extracurricular Activities
 ======
-* Awarded for Cumulative Outstanding Contribution to Cultural Activities, IIT Delhi (2020)
-* Awarded for Outstanding Contribution to Board for Student Publications, IIT Delhi (2020)
+* Awarded for Cumulative Outstanding Contribution to Cultural Activities, IITD (2020)
+* Awarded for Outstanding Contribution to Board for Student Publications, IITD (2020)
 * Student Volunteer with Jean Dreze for evidence based national policy design (2019)
-* Chief Editor, Creative and Journalism, Board for Student Publications, IIT Delhi (2018-19)
+* Chief Editor, Creative and Journalism, Board for Student Publications, IITD (2018-19)
 * Exchange Buddy, International Programmes, mentoring exchange students on campus (2018)
-* Quizzing Club Representative, Inter IIT 2nd position, 2nd in League quizzing (2017)
+* Quizzing Representative, Inter IIT 2nd position, 2nd in League quizzing (2017)
 * Senior Diploma in Kathak, Prayag Sangeet Samiti with 8 years of professional training (2015)
 
 Publications
@@ -92,12 +92,3 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-<> Teaching
-<> ======
- <> <ul>{% for post in site.teaching %}
- <>   {% include archive-single-cv.html %}
- <> {% endfor %}</ul>
-  
-<> Service and leadership
-<> ======
-<> Currently signed in to 43 different slack teams
