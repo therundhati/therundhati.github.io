@@ -4,10 +4,7 @@ main:
     url: /publications/
 
   - title: "Research"
-    url: /research/    
-
-  - title: "Economics"
-    url: /economics/
+    url: /research/
         
   - title: "Blog Posts"
     url: /blog/
