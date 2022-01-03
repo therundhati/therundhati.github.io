@@ -19,8 +19,8 @@ Work experience
 ======
 * Analyst, Risk Strategy and Decision Science, American Express (2020-Present)
   * Working on building rules, treatment procedures and scores/models for new accounts, transactions and payments for the Corporate portfolio, Global Markets
-  * dentifying and eliminating loss due to wilful defaulters by developing strategies, statistical models and new risk variables by utilising internal and credit bureau information for global markets
-  * Coordinating vendor data for defining procedures in markets expansion and migration efforts for corporate clients’ onboarding
+  * Identifying and eliminating loss due to wilful defaulters by developing strategies, statistical models and new risk variables by utilising internal and credit bureau information for global markets
+  * Coordinating and contributing to vendor data for defining procedures in markets expansion and migration efforts for corporate clients’ onboarding
 
 * Summer Analyst, Cost Engineering, Daimler AG (May-Jul 2019)
   * Prepared data analysis, LPP and referencing for tooling negotiations spanning eight years for the department, and utilised the same for devising Quick Calculation Tool Automation for costing on common platform for deployment in in Japan, Germany, India and US
