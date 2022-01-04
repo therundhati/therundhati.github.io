@@ -3,7 +3,7 @@ title: "The Dictator"
 excerpt: "Story penned for the anthology _Elixir of Words_, The Write Order, 2021"
 ---
 
-Story penned for the anthology _Elixir of Words_, The Write Order, 2021
+Story penned for the anthology _Elixir of Words_, The Write Order, 2021. Available on [Amazon](https://www.amazon.in/Elixir-Words-1-Multiple/dp/9391406335/ref=sr_1_3?crid=3KY98XE3KQBEQ&keywords=the+write+order+anthology+elixir&qid=1641312962&sprefix=the+write+order+anthology+eli%2Caps%2C407&sr=8-3)
 
 </br>
 
