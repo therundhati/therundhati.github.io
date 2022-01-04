@@ -78,6 +78,7 @@ Coursework
 
 Extracurricular Activities
 ======
+* Fellow, Youth Leadership and Engagement for Social Action, LEAD India (2021)
 * Awarded for Cumulative Outstanding Contribution to Cultural Activities, IITD (2020)
 * Awarded for Outstanding Contribution to Board for Student Publications, IITD (2020)
 * Student Volunteer with Jean Dreze for evidence based national policy design (2019)
