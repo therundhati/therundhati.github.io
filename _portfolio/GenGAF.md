@@ -1,6 +1,6 @@
 ---
 title: "Generation GAF"
-excerpt: "Artists for Climate: Generation Give a F*** <br/><img src='/images/GenGAF.png'>"
+excerpt: "Artists for Climate"
 ---
 
 This is Animesh's and my contribution to the Artists for Climate Initiative by TED. <br/>
