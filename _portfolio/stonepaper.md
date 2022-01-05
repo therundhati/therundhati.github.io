@@ -19,9 +19,9 @@ To end a trail of mindful steps, with much convinced insistence.
 And it’s all said and shred with rue, all that’s meant for shredding,  
 It’s a stone that leaves it with no more than futile dreading.  
 
-Scissors slash paper, paper throttles stone,
-Stone fragments scissors yet could I ever be alone,
-Nought fades warmth of smiles I carry, with love and cheer,
-Memories I anchor to, that my heart holds close and dear.
-And there’s no fire that could douse a cut, a tear, a lie,
-The imprints my mind endures, just another one more until I die.
+Scissors slash paper, paper throttles stone,  
+Stone fragments scissors yet could I ever be alone,  
+Nought fades warmth of smiles I carry, with love and cheer,  
+Memories I anchor to, that my heart holds close and dear.  
+And there’s no fire that could douse a cut, a tear, a lie,  
+The imprints my mind endures, just another one more until I die.  
