@@ -40,7 +40,7 @@ modular layout for electric and hybrid electric vehicles with increased power ca
 Scholastic Achievements
 ======
 * Winner, Communication Design, D’source Post-Corona Design Challenge, IDC School of Design, Indian Institute of Technology Bombay (2022)
-* Winner, STIP Ideathon Vision 2040, Dept. of Science and Technology, Govt. of India (2022)
+* Winner, <u><a href="{{[https://thesciencepolicyforum.org/ideathon-result-announcement/]}}">STIP Ideathon Vision 2040</a></u>, Dept. of Science and Technology, Govt. of India (2022)
 * Harvard College Conference, Boston: Delegate at HPAIR; commendable entry to essay contest (2021)
 * TechGig Geek Goddess: All India Rank 9 at women’s coding contest (2020)
 * Global Young Leaders Conference, Washington DC and NYC: represented the country as Global Scholar, India for international cooperation for sustainable ideation (2019)
