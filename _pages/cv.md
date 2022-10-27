@@ -17,7 +17,12 @@ Education
 
 Work experience
 ======
-* Analyst, Risk Strategy and Decision Science, American Express (2020-Present)
+* Analyst, Global Currencies and Emerging Markets, Market Risk Strats, Goldman Sachs (2022-Present)
+  * Responsible for capturing day to day market risk, exposure and materiality of the firm's portfolio
+  * Designing scenario specific stress testing and Value at Risk calculations for FX asset class, which includes products like currency derivatives
+  * Working on regulatory requirements for CCAR, desk trades and other risk metrics
+
+* Analyst, Risk Strategy and Decision Science, American Express (2020-2022)
   * Working on building rules, treatment procedures and scores/models for new accounts, transactions and payments for the Corporate portfolio, Global Markets
   * Identifying and eliminating loss due to wilful defaulters by developing strategies, statistical models and new risk variables by utilising internal and credit bureau information for global markets
   * Coordinating and contributing to vendor data for defining procedures in markets expansion and migration efforts for corporate clients’ onboarding
@@ -34,6 +39,8 @@ modular layout for electric and hybrid electric vehicles with increased power ca
   
 Scholastic Achievements
 ======
+* Winner, Communication Design, D’source Post-Corona Design Challenge, IDC School of Design, Indian Institute of Technology Bombay (2022)
+* Winner, STIP Ideathon Vision 2040, Dept. of Science and Technology, Govt. of India (2022)
 * Harvard College Conference, Boston: Delegate at HPAIR; commendable entry to essay contest (2021)
 * TechGig Geek Goddess: All India Rank 9 at women’s coding contest (2020)
 * Global Young Leaders Conference, Washington DC and NYC: represented the country as Global Scholar, India for international cooperation for sustainable ideation (2019)
@@ -78,6 +85,7 @@ Coursework
 
 Extracurricular Activities
 ======
+* Beginner Ballerina, The Lewis Foundation of Classical Ballet (2022)
 * Fellow, Youth Leadership and Engagement for Social Action, LEAD India (2021)
 * Awarded for Cumulative Outstanding Contribution to Cultural Activities, IITD (2020)
 * Awarded for Outstanding Contribution to Board for Student Publications, IITD (2020)
