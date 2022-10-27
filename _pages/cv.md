@@ -11,23 +11,23 @@ redirect_from:
 
 Education
 ======
-* B.Tech in Mechanical Engineering with Minor Specialisation in Economics, Indian Institute of Technology Delhi, 2016-2020 (GPA 8.54/10)
-* Grade 12, Amity International School, Gurgaon (97.8%)
-* Grade 10, Amity International School, Gurgaon (GPA 10/10)
+* B.Tech in Mechanical Engineering with Minor Specialisation in Economics, **Indian Institute of Technology Delhi**, 2016-2020 (**GPA 8.54/10**)
+* Grade 12, Amity International School, Gurgaon (**97.8%**)
+* Grade 10, Amity International School, Gurgaon (**GPA 10/10**)
 
 Work experience
 ======
-* Global Currencies and Emerging Markets, Market Risk Strats, Goldman Sachs (2022-Present)
+* Global Currencies and Emerging Markets, Market Risk Strats, **Goldman Sachs** (2022-Present)
   * Responsible for capturing day to day market risk, exposure and materiality of the firm's portfolio
   * Designing scenario specific stress testing and Value at Risk calculations for FX asset class, which includes products like currency derivatives
   * Working on regulatory requirements for CCAR, desk trades and other risk metrics
 
-* Analyst, Risk Strategy and Decision Science, American Express (2020-2022)
+* Analyst, Risk Strategy and Decision Science, **American Express** (2020-2022)
   * Working on building rules, treatment procedures and scores/models for new accounts, transactions and payments for the Corporate portfolio, Global Markets
   * Identifying and eliminating loss due to wilful defaulters by developing strategies, statistical models and new risk variables by utilising internal and credit bureau information for global markets
   * Coordinating and contributing to vendor data for defining procedures in markets expansion and migration efforts for corporate clients’ onboarding
 
-* Summer Analyst, Cost Engineering, Daimler AG (May-Jul 2019)
+* Summer Analyst, Cost Engineering, **Daimler AG** (May-Jul 2019)
   * Prepared data analysis, LPP and referencing for tooling negotiations spanning eight years for the department, and utilised the same for devising Quick Calculation Tool Automation for costing on common platform for deployment in in Japan, Germany, India and US
   * Formulated cost cutting potential algorithm for a given set of production parts on gap between best fit and best practice lines
 
