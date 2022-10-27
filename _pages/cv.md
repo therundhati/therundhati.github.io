@@ -17,7 +17,7 @@ Education
 
 Work experience
 ======
-* Analyst, Global Currencies and Emerging Markets, Market Risk Strats, Goldman Sachs (2022-Present)
+* Global Currencies and Emerging Markets, Market Risk Strats, Goldman Sachs (2022-Present)
   * Responsible for capturing day to day market risk, exposure and materiality of the firm's portfolio
   * Designing scenario specific stress testing and Value at Risk calculations for FX asset class, which includes products like currency derivatives
   * Working on regulatory requirements for CCAR, desk trades and other risk metrics
@@ -32,15 +32,14 @@ Work experience
   * Formulated cost cutting potential algorithm for a given set of production parts on gap between best fit and best practice lines
 
 * Visiting Research Scholar, Dept. of Electrical and Computer Science Engineering, Ohio State University (May-Jul 2018)
-  * Supervised by Professor Anant Agarwal
-  * Worked on manufacturing technologies, detailed software simulation and prototyping of power
+  * Supervised by Professor Anant Agarwal, worked on manufacturing technologies, detailed software simulation and prototyping of power
 modular layout for electric and hybrid electric vehicles with increased power capacity
   * Analysed parasitic inductance and capacitance for design improvement and optimisation of parameters
   
 Scholastic Achievements
 ======
-* Winner, Communication Design, D’source Post-Corona Design Challenge, IDC School of Design, Indian Institute of Technology Bombay (2022)
-* Winner, <u><a href="{{[https://thesciencepolicyforum.org/ideathon-result-announcement/]}}">STIP Ideathon Vision 2040</a></u>, Dept. of Science and Technology, Govt. of India (2022)
+* Winner, Communication Design, {D’source Post-Corona Design Challenge}[https://dsourcechallenge.org/dcdc2020/results.html#results], IDC School of Design, Indian Institute of Technology Bombay (2022)
+* Winner, {STIP Ideathon Vision 2040}[https://thesciencepolicyforum.org/ideathon-result-announcement/], Dept. of Science and Technology, Govt. of India (2022)
 * Harvard College Conference, Boston: Delegate at HPAIR; commendable entry to essay contest (2021)
 * TechGig Geek Goddess: All India Rank 9 at women’s coding contest (2020)
 * Global Young Leaders Conference, Washington DC and NYC: represented the country as Global Scholar, India for international cooperation for sustainable ideation (2019)
