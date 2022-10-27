@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* Grade 10, Amity International School, Gurgaon (GPA 10/10)
+* B.Tech in Mechanical Engineering with Minor Specialisation in Economics, Indian Institute of Technology Delhi, 2016-2020 (GPA 8.54/10)
 * Grade 12, Amity International School, Gurgaon (97.8%)
-* B.Tech in Mechanical Engineering, Indian Institute of Technology Delhi, 2016-2020 (GPA 8.54/10)
+* Grade 10, Amity International School, Gurgaon (GPA 10/10)
 
 Work experience
 ======
