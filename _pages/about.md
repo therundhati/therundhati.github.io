@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-_* analyst * engineer * designer * economics + reading enthusiast *_ <br />
+<!--_* analyst * engineer * designer * economics + reading enthusiast *_ <br />-->
 
 I am employed at Goldman Sachs as a Strat with the Market Risk team. I primarily work on asset or portfolio modelling, pricing and prediction using internal and macroeconomic variables. Prior to this, I worked at American Express as an Analyst for Strategy and Decision Science with the Risk Management team on building strategies for new accounts, transactions and payments for the Corporate portfolio, Global Markets. <br/>
 
