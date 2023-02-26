@@ -19,7 +19,7 @@ A couple of new projects that I am working on include Evaluating Ethics in HCI, 
 
  <br/>
  
-Thank you for visiting! Drop a mail for potential conversations/collaborations around common interests, I'd be extremely happy to exchange or pursue new perspectives :)
+<!--Thank you for visiting! Drop a mail for potential conversations/collaborations around common interests, I'd be extremely happy to exchange or pursue new perspectives :)-->
 
  <br/>
 
