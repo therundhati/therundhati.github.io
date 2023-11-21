@@ -84,6 +84,7 @@ Coursework
 
 Extracurricular Activities
 ======
+* Ambassador, Women Techmakers at Google, empowering communities through organizing events, public speaking, creating content, and mentoring (2023)
 * Beginner Ballerina, The Lewis Foundation of Classical Ballet (2022)
 * Fellow, Youth Leadership and Engagement for Social Action, LEAD India (2021)
 * Awarded for Cumulative Outstanding Contribution to Cultural Activities, IITD (2020)
