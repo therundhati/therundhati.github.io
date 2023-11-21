@@ -2,7 +2,7 @@
 title: "Chat of the Town: Gathering User Perception About ChatGPT"
 collection: publications
 permalink: /publication/chatgptreview
-excerpt: 'Pertains to COVID-19 in India, evaluates statistical relationship between three time series - number of cases, number of deaths, and number of tests each day, effect of temperature and humidity, exponential smoothing for forecasting, compartmental modelling for potential lockdwon scenarios, and policy implications.'
+excerpt: 'ChatGPT is a chat bot that generates responses to textual questions. We studied human interaction with this application, by focusing on (1) nature and frequency of questions to better understand what users expect from such an application, and (2) how users perceive the responses provided by ChatGPT, what utility and satisfaction they derive in their chosen domain of use.'
 date: 2023-06-17
 venue: 'SSRN'
 paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4502004'
