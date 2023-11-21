@@ -3,7 +3,7 @@ title: "Chat of the Town: Gathering User Perception About ChatGPT"
 collection: publications
 permalink: /publication/chatgptreview
 excerpt: 'Pertains to COVID-19 in India, evaluates statistical relationship between three time series - number of cases, number of deaths, and number of tests each day, effect of temperature and humidity, exponential smoothing for forecasting, compartmental modelling for potential lockdwon scenarios, and policy implications.'
-date: 2020-05-30
+date: 2023-06-17
 venue: 'SSRN'
 paperurl: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4502004'
 citation: 'Arundhati Dixit, Ridhi Jain (2023). Chat of the Town: Gathering User Perception About ChatGPT; <i>SSRN</i>.'
@@ -13,4 +13,4 @@ ChatGPT is a chat bot that generates responses to textual questions. We studied 
 
 [Download paper here](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4502004)
 
-Recommended citation: Arundhati Dixit, Ridhi Jain (2020). Chat of the Town: Gathering User Perception About ChatGPT; <i>SSRN</i>.
+Recommended citation: Arundhati Dixit, Ridhi Jain (2023). Chat of the Town: Gathering User Perception About ChatGPT; <i>SSRN</i>.
