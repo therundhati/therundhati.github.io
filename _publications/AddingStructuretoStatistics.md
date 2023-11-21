@@ -2,7 +2,7 @@
 title: "Adding Structure to Statistics: A Study on COVID-19 Dynamics in India"
 collection: publications
 permalink: /publication/covidmedrxiv
-excerpt: 'Pertains to COVID-19 in India, evaluates statistical relationship between three time series - number of cases, number of deaths, and number of tests each day, effect of temperature and humidity, exponential smoothing for forecasting, compartmental modelling for potential lockdwon scenarios, and policy implications.'
+excerpt: 'Pertains to COVID-19 in India, evaluates statistical relationship between three time series - number of cases, number of deaths, and number of tests each day, effect of temperature and humidity, exponential smoothing for forecasting, compartmental modelling for potential lockdown scenarios, and policy implications.'
 date: 2020-05-30
 venue: 'medRxiv'
 paperurl: 'https://www.medrxiv.org/content/10.1101/2020.05.26.20113522v2'
