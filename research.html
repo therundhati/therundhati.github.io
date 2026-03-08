@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research · Arundhati Dixit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .research-body { padding: 0 56px 80px; }
+
+    /* ── GROUP ── */
+    .group {
+      border-bottom: 1px solid rgba(15,15,14,0.08);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .group.visible { opacity: 1; transform: translateY(0); }
+
+    .group-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 40px 0;
+      cursor: pointer; gap: 24px;
+    }
+    .group-left { display: flex; align-items: baseline; gap: 20px; }
+    .group-number {
+      font-family: 'Cormorant', serif;
+      font-weight: 300; font-size: 13px;
+      color: var(--ink-faint); letter-spacing: 0.08em; min-width: 24px;
+    }
+    .group-title {
+      font-family: 'Cormorant', serif;
+      font-weight: 400;
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1; color: var(--ink); transition: color 0.25s;
+    }
+    .group-header:hover .group-title { color: var(--accent); }
+    .group-meta { display: flex; align-items: center; gap: 24px; }
+    .group-count {
+      font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--ink-faint);
+    }
+    .group-toggle {
+      width: 28px; height: 28px;
+      border: 1px solid var(--ink-faint);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--ink-faint);
+      transition: border-color 0.25s, color 0.25s, transform 0.35s ease;
+      flex-shrink: 0; line-height: 1;
+    }
+    .group-header:hover .group-toggle { border-color: var(--accent); color: var(--accent); }
+    .group.open .group-toggle { transform: rotate(45deg); border-color: var(--accent); color: var(--accent); }
+
+    .group-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.65s cubic-bezier(0.23,1,0.32,1);
+    }
+    .group.open .group-body { max-height: 3000px; }
+
+    /* ── ACCORDION ── */
+    .accordion-item {
+      border-top: 1px solid rgba(15,15,14,0.06);
+      cursor: pointer;
+    }
+    .accordion-item:last-child { margin-bottom: 24px; }
+    .accordion-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 18px 0 18px 32px; gap: 20px;
+    }
+    .accordion-left { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .accordion-title {
+      font-size: 14px; font-weight: 500;
+      color: var(--ink-muted); line-height: 1.4; transition: color 0.25s;
+    }
+    .accordion-item:hover .accordion-title { color: var(--ink); }
+    .accordion-item.open .accordion-title { color: var(--accent); }
+    .badge {
+      font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); border: 1px solid var(--accent);
+      padding: 2px 7px; white-space: nowrap; flex-shrink: 0;
+    }
+    .accordion-year {
+      font-size: 11px; letter-spacing: 0.1em;
+      color: var(--ink-faint); white-space: nowrap; text-align: right;
+    }
+    .accordion-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1);
+      padding-left: 32px;
+    }
+    .accordion-item.open .accordion-body { max-height: 400px; }
+    .accordion-content {
+      padding-bottom: 20px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .accordion-desc {
+      font-size: 13px; line-height: 1.75;
+      color: var(--ink-muted); max-width: 620px;
+    }
+    .accordion-advisor {
+      font-size: 11px; letter-spacing: 0.04em;
+      color: var(--ink-faint); font-style: italic;
+    }
+    .accordion-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none;
+      transition: color 0.25s; width: fit-content;
+    }
+    .accordion-link::after { content: '→'; transition: transform 0.2s ease; }
+    .accordion-link:hover { color: var(--accent); }
+    .accordion-link:hover::after { transform: translateX(4px); }
+
+    @media (max-width: 768px) {
+      .research-body { padding: 0 24px 80px; }
+      .accordion-header { padding-left: 16px; }
+      .accordion-body { padding-left: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="cursor-orb"></div>
+  <div id="cursor-dot"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">AD</a>
+    <ul class="nav-links">
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-title">Research & Projects</h1>
+    <p class="page-subtitle">4 areas · 20 projects</p>
+  </div>
+
+  <div class="research-body">
+
+    <!-- ── 01: AI SYSTEMS & TECH ETHICS ── -->
+    <div class="group" onclick="toggleGroup(this)">
+      <div class="group-header">
+        <div class="group-left">
+          <span class="group-number">01</span>
+          <h2 class="group-title">AI Systems & Tech Ethics</h2>
+        </div>
+        <div class="group-meta">
+          <span class="group-count">8 projects</span>
+          <span class="group-toggle">+</span>
+        </div>
+      </div>
+      <div class="group-body">
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Applyr — GenAI-powered job application platform with swipe UX</span>
+              <span class="badge">Project</span>
+            </div>
+            <span class="accordion-year">2026</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Designed and built Applyr, an agentic AI platform that streamlines job applications through a swipe-based interface. Leverages LLMs to auto-fill application forms and generate personalised, editable cover letters in real time — reducing application time by an estimated 70%. Built for mobile-first use with integrated application tracking.</p>
+            <span class="accordion-advisor">Generative AI for Business · Columbia Business School · Spring 2026</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Meta's misinformation policies and the community notes shift — ethics analysis</span>
+            </div>
+            <span class="accordion-year">2026</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Critical analysis of Meta's evolving misinformation policies in the context of its shift to a community notes model. Applied Trevor Nelson's framework for technology ethics to evaluate accountability, transparency, and societal impact of platform-level content moderation decisions.</p>
+            <span class="accordion-advisor">Columbia Business School · 2026</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Upstart ML bias analysis using Trevor Nelson's ethics framework</span>
+            </div>
+            <span class="accordion-year">2026</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Examined algorithmic bias in Upstart's ML-based credit underwriting models through the lens of Trevor Nelson's ethics framework — analysing fairness, proxy discrimination, and the ethical dimensions of AI-driven lending decisions.</p>
+            <span class="accordion-advisor">Columbia Business School · 2026</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">LLM analyst chatbot for healthcare equity research using RAG pipelines</span>
+              <span class="badge">Project</span>
+            </div>
+            <span class="accordion-year">2025</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Architected and deployed an LLM-powered chatbot for dynamic retrieval and summarisation of research and financial datasets for healthcare-focused clients at Nephron Research.</p>
+            <span class="accordion-advisor">Nephron Research · Fall 2025</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">LLM-powered automation platform for semiconductor design workflows</span>
+              <span class="badge">Project</span>
+            </div>
+            <span class="accordion-year">2025</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Designed an LLM automation platform integrating validation tools and intelligent test augmentation to streamline engineering analysis and debugging across hardware design teams.</p>
+            <span class="accordion-advisor">Columbia Business School · 2025</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Chat of the Town: Gathering User Perception About ChatGPT</span>
+              <span class="badge">Publication</span>
+            </div>
+            <span class="accordion-year">2023</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Studied human interaction with ChatGPT — nature and frequency of questions, user perception of responses, and utility and satisfaction derived across domains of use.</p>
+            <span class="accordion-advisor">Arundhati Dixit, Ridhi Jain · SSRN, 2023</span>
+            <a class="accordion-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4502004" target="_blank">Read on SSRN</a>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Ethics in HCI: study of dark patterns</span>
+            </div>
+            <span class="accordion-year">2021–22</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Evaluated ethics in human-computer interaction with a focus on dark patterns — deceptive UI/UX techniques designed to manipulate user behaviour against their own interests.</p>
+            <span class="accordion-advisor">Prof. Jyoti Kumar · IIT Delhi</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Effect of voters' uncertainty on election outcomes — computational social choice</span>
+            </div>
+            <span class="accordion-year">2022</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Analysed how voter uncertainty affects election outcomes from a computational social choice perspective, examining strategic voting and preference aggregation mechanisms.</p>
+            <span class="accordion-advisor">Prof. Rohit Vaish · IIT Delhi</span>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 02: MARKETS & MODELLING ── -->
+    <div class="group" onclick="toggleGroup(this)">
+      <div class="group-header">
+        <div class="group-left">
+          <span class="group-number">02</span>
+          <h2 class="group-title">Markets & Modelling</h2>
+        </div>
+        <div class="group-meta">
+          <span class="group-count">5 projects</span>
+          <span class="group-toggle">+</span>
+        </div>
+      </div>
+      <div class="group-body">
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">ML weather risk prediction for clean energy infrastructure portfolios</span>
+              <span class="badge">Project</span>
+            </div>
+            <span class="accordion-year">2025</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Built a multi-source time series ML system for real-time weather scenario modelling supporting bias-adjusted forecasting for clean energy infrastructure investments at Leyden Analytics.</p>
+            <span class="accordion-advisor">Leyden Analytics · Columbia Business School · 2025</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Adding Structure to Statistics: COVID-19 Dynamics in India</span>
+              <span class="badge">Publication</span>
+            </div>
+            <span class="accordion-year">2020</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Statistical analysis of COVID-19 case, death, and test time series in India. Examined temperature and humidity effects, applied exponential smoothing for forecasting, and built compartmental models for lockdown scenarios and policy implications.</p>
+            <span class="accordion-advisor">Arundhati Dixit, Sarthak Vishnoi, SB Paul · medRxiv, 2020</span>
+            <a class="accordion-link" href="https://www.medrxiv.org/content/10.1101/2020.05.26.20113522v2" target="_blank">Read on medRxiv</a>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Replication of Stock & Watson: International Business Cycle Dynamics</span>
+            </div>
+            <span class="accordion-year">2020</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Replication exercise for Stock and Watson's study on changes in international business cycle dynamics, published in the Journal of the European Economic Association (2005).</p>
+            <span class="accordion-advisor">Prof. SB Paul · IIT Delhi</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Econometric analysis of factors affecting hotel pricing</span>
+            </div>
+            <span class="accordion-year">2018</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Applied econometric methods to identify and quantify factors driving hotel pricing, examining demand elasticity, location, seasonality, and competitive dynamics.</p>
+            <span class="accordion-advisor">IIT Delhi · 2018</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Macroeconomic indicators of India over 50 years</span>
+            </div>
+            <span class="accordion-year">2017</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Longitudinal study of India's macroeconomic indicators across five decades, examining structural shifts in GDP, inflation, trade, and monetary policy.</p>
+            <span class="accordion-advisor">IIT Delhi · 2017</span>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 03: ECONOMICS & PLATFORMS ── -->
+    <div class="group" onclick="toggleGroup(this)">
+      <div class="group-header">
+        <div class="group-left">
+          <span class="group-number">03</span>
+          <h2 class="group-title">Economics & Platforms</h2>
+        </div>
+        <div class="group-meta">
+          <span class="group-count">4 projects</span>
+          <span class="group-toggle">+</span>
+        </div>
+      </div>
+      <div class="group-body">
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Microeconomic analysis of platform design — monopoly, competition, homing</span>
+            </div>
+            <span class="accordion-year">2020</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Analysed platform design strategies beyond pricing for monopoly and competitive markets, examining single-homing and multi-homing dynamics and their effects on platform participation and welfare.</p>
+            <span class="accordion-advisor">Prof. Saptarshi Mukherjee · IIT Delhi</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Evaluating pandemic work ethic — evolutionary game theory</span>
+            </div>
+            <span class="accordion-year">2020</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Applied evolutionary game theory to model shifts in work ethic and productivity during the COVID-19 pandemic, examining equilibrium strategies under uncertainty.</p>
+            <span class="accordion-advisor">Prof. Saptarshi Mukherjee · IIT Delhi</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Spectrum auctions — mechanism design</span>
+            </div>
+            <span class="accordion-year">2019</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Studied mechanism design in spectrum auctions, examining auction formats, bidder strategy, and efficiency outcomes in regulatory and market contexts.</p>
+            <span class="accordion-advisor">Prof. Saptarshi Mukherjee · IIT Delhi</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Supplier costing negotiation analytics — Daimler AG</span>
+              <span class="badge">Project</span>
+            </div>
+            <span class="accordion-year">2019</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Used data analytics and visualisation to analyse and automate the study of supplier costing negotiations within the Cost Engineering department at Daimler AG, Kawasaki.</p>
+            <span class="accordion-advisor">Cost Engineering · Daimler AG · Japan · 2019</span>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── 04: ENGINEERING & SYSTEMS ── -->
+    <div class="group" onclick="toggleGroup(this)">
+      <div class="group-header">
+        <div class="group-left">
+          <span class="group-number">04</span>
+          <h2 class="group-title">Engineering & Systems</h2>
+        </div>
+        <div class="group-meta">
+          <span class="group-count">4 projects</span>
+          <span class="group-toggle">+</span>
+        </div>
+      </div>
+      <div class="group-body">
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Vehicle detection and tracking using machine learning</span>
+            </div>
+            <span class="accordion-year">2020</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Designed and implemented an ML-based vehicle detection and tracking system, applying computer vision techniques to real-world traffic data.</p>
+            <span class="accordion-advisor">Prof. Prathosh · Prof. Jayadeva · IIT Delhi</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Efficiency of hybrid vehicles for Indian driving cycles</span>
+            </div>
+            <span class="accordion-year">2021–22</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Evaluated hybrid vehicle efficiency under Indian driving conditions, modelling energy consumption and performance across representative urban and highway driving cycles.</p>
+            <span class="accordion-advisor">Prof. Subbarao · IIT Delhi</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">Operations research analysis of Mobility as a Service (MaaS)</span>
+            </div>
+            <span class="accordion-year">2019–20</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">B.Tech thesis. Applied operations research methods to analyse the design and optimisation of Mobility as a Service systems, examining routing, fleet sizing, and service integration.</p>
+            <span class="accordion-advisor">Prof. Nomesh Bolia · IIT Delhi · B.Tech Thesis</span>
+          </div></div>
+        </div>
+
+        <div class="accordion-item" onclick="toggleAccordion(event, this)">
+          <div class="accordion-header">
+            <div class="accordion-left">
+              <span class="accordion-title">EV power modular layout design and simulation</span>
+              <span class="badge">Project</span>
+            </div>
+            <span class="accordion-year">2018</span>
+          </div>
+          <div class="accordion-body"><div class="accordion-content">
+            <p class="accordion-desc">Design, prototyping, and simulation of power modular layout for electric vehicles at the High Voltage and Power Electronics Lab, Ohio State University.</p>
+            <span class="accordion-advisor">Prof. Anant Agarwal · Ohio State University · Summer 2018</span>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-name">Arundhati Dixit</span>
+    <span class="footer-year">© 2026</span>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => initScrollReveal('.group'));
+    function toggleGroup(el) { el.classList.toggle('open'); }
+    function toggleAccordion(e, el) {
+      e.stopPropagation();
+      el.closest('.group-body').querySelectorAll('.accordion-item').forEach(item => {
+        if (item !== el) item.classList.remove('open');
+      });
+      el.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>

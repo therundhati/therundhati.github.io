@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arundhati Dixit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+
+    /* ── HERO NAV (no backdrop on hero — transparent) ── */
+    nav { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+
+    /* ── HERO ── */
+    .hero {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 1; opacity: 0.6;
+    }
+    .hero-glow {
+      position: fixed;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,45,120,0.07) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+      transform: translate(-50%, -50%);
+      transition: left 0.8s cubic-bezier(0.23,1,0.32,1), top 0.8s cubic-bezier(0.23,1,0.32,1);
+    }
+
+    /* ── HERO LEFT ── */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 56px 72px;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s ease forwards;
+    }
+    .hero-name {
+      font-family: 'Cormorant', serif;
+      font-weight: 300;
+      font-size: clamp(52px, 6.8vw, 100px);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      white-space: nowrap;
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.35s ease forwards;
+    }
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink-muted);
+      max-width: 420px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.55s ease forwards;
+    }
+    .hero-desc strong { color: var(--ink); font-weight: 500; }
+
+    /* Social links */
+    .hero-social {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s ease forwards;
+    }
+    .social-link {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.25s;
+    }
+    .social-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    .social-link:hover { color: var(--accent); }
+    .social-link:hover::after { width: 100%; }
+    .social-divider {
+      width: 1px; height: 12px;
+      background: var(--ink-faint);
+    }
+
+    /* ── HERO RIGHT ── */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 120px 56px 72px 0;
+      position: relative; z-index: 2;
+    }
+    .hero-photo-wrap {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 36px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .hero-photo-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      filter: grayscale(100%);
+      transition: filter 0.4s ease;
+    }
+    .hero-photo-wrap:hover img { filter: grayscale(0%); }
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute; inset: -3px;
+      border-radius: 50%;
+      border: 1.5px solid transparent;
+      transition: border-color 0.35s ease;
+    }
+    .hero-photo-wrap:hover::after { border-color: var(--accent); }
+
+    .hero-stats {
+      display: flex;
+      flex-direction: column;
+      width: 100%; max-width: 340px;
+      opacity: 0;
+      animation: fadeIn 1s 0.9s ease forwards;
+    }
+    .stat-item {
+      padding: 24px 0;
+      border-top: 1px solid rgba(15,15,14,0.1);
+      display: flex; flex-direction: column; gap: 5px;
+      transition: border-color 0.3s;
+    }
+    .stat-item:last-child { border-bottom: 1px solid rgba(15,15,14,0.1); }
+    .stat-item:hover { border-color: var(--accent); }
+    .stat-label {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+    .stat-value {
+      font-family: 'Cormorant', serif;
+      font-weight: 400;
+      font-size: 19px;
+      color: var(--ink);
+      transition: color 0.25s;
+    }
+    .stat-item:hover .stat-value { color: var(--accent); }
+    .stat-sub { font-size: 12px; color: var(--ink-muted); font-style: italic; }
+
+    .hero-vertical {
+      position: absolute;
+      right: 20px; top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      opacity: 0.35;
+      white-space: nowrap;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeIn 1s 1.4s ease forwards;
+    }
+    .scroll-indicator span {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted);
+    }
+    .scroll-line {
+      width: 1px; height: 44px;
+      background: linear-gradient(to bottom, var(--ink-muted), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50%       { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      html, body { overflow: auto; }
+      .hero { height: auto; grid-template-columns: 1fr; }
+      .hero-left { padding: 140px 28px 56px; justify-content: flex-start; }
+      .hero-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="cursor-orb"></div>
+  <div id="cursor-dot"></div>
+  <div class="hero-glow" id="heroGlow"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">AD</a>
+    <ul class="nav-links">
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Quant · Finance · AI Systems</p>
+      <h1 class="hero-name">Arundhati Dixit</h1>
+      <p class="hero-desc">
+        MBA candidate at <strong>Columbia Business School</strong>. Former <strong>Goldman Sachs</strong> Market Risk Strat. Building at the intersection of <strong>quantitative finance, AI systems,</strong> and <strong>technology ethics</strong>.
+      </p>
+      <div class="hero-social">
+        <a href="mailto:adixit26@gsb.columbia.edu" class="social-link">Email</a>
+        <div class="social-divider"></div>
+        <a href="https://linkedin.com/in/arundhati-dixit" target="_blank" class="social-link">LinkedIn</a>
+        <div class="social-divider"></div>
+        <a href="https://github.com/arundhati-dixit" target="_blank" class="social-link">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <img src="photo.jpg" alt="Arundhati Dixit" />
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-label">Currently</span>
+          <span class="stat-value">Columbia Business School</span>
+          <span class="stat-sub">MBA, Finance · Class of 2026</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Background</span>
+          <span class="stat-value">Goldman Sachs · AmEx</span>
+          <span class="stat-sub">Market Risk · Credit Strategy</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Education</span>
+          <span class="stat-value">IIT Delhi</span>
+          <span class="stat-sub">B.Tech Mechanical · Economics Minor</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Focus Areas</span>
+          <span class="stat-value">AI · Quant Finance · Ethics</span>
+          <span class="stat-sub">2 publications · Dean's List</span>
+        </div>
+      </div>
+      <span class="hero-vertical">Portfolio · 2026</span>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', () => initScrollReveal('.entry'));</script>
+</body>
+</html>

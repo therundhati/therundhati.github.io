@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience · Arundhati Dixit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── TIMELINE ── */
+    .timeline {
+      padding: 0 56px 80px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: calc(56px + 72px); top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, rgba(15,15,14,0.13), rgba(15,15,14,0.03));
+    }
+
+    .year-stamp {
+      grid-column: 1;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      text-align: right;
+      padding-right: 20px;
+      padding-top: 44px;
+      line-height: 1;
+    }
+
+    .entry {
+      grid-column: 2;
+      padding-left: 40px;
+      position: relative;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .entry.visible { opacity: 1; transform: translateY(0); }
+    .entry::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 44px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1.5px solid var(--ink-faint);
+      transition: border-color 0.3s, background 0.3s;
+      z-index: 1;
+    }
+    .entry:hover::before { border-color: var(--accent); background: var(--accent); }
+
+    /* Full entry */
+    .entry-full {
+      border-top: 1px solid rgba(15,15,14,0.08);
+      padding-top: 36px; padding-bottom: 40px;
+      cursor: pointer;
+    }
+    .entry-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 16px; margin-bottom: 8px;
+    }
+    .entry-company {
+      font-family: 'Cormorant', serif;
+      font-weight: 400;
+      font-size: clamp(24px, 2.8vw, 36px);
+      line-height: 1.1; color: var(--ink);
+      transition: color 0.25s;
+    }
+    .entry-full:hover .entry-company { color: var(--accent); }
+    .entry-tag {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      border: 1px solid var(--ink-faint);
+      padding: 3px 8px;
+      margin-top: 6px;
+      white-space: nowrap;
+      transition: color 0.25s, border-color 0.25s;
+      align-self: start;
+    }
+    .entry-full:hover .entry-tag { color: var(--accent); border-color: var(--accent); }
+    .entry-role {
+      font-size: 13px; letter-spacing: 0.03em;
+      color: var(--ink-muted); margin-bottom: 14px;
+    }
+    .entry-summary {
+      font-size: 14px; line-height: 1.75;
+      color: var(--ink-muted); max-width: 640px;
+    }
+    .entry-summary strong { color: var(--ink); font-weight: 500; }
+
+    .entry-bullets {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.23,1,0.32,1);
+    }
+    .entry-bullets.open { max-height: 500px; }
+    .entry-bullets ul {
+      list-style: none; margin-top: 18px;
+      display: flex; flex-direction: column; gap: 9px;
+    }
+    .entry-bullets li {
+      font-size: 13px; line-height: 1.7;
+      color: var(--ink-muted); padding-left: 16px;
+      position: relative; max-width: 640px;
+    }
+    .entry-bullets li::before { content: '–'; position: absolute; left: 0; color: var(--accent); }
+
+    .entry-toggle {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-faint); transition: color 0.25s; user-select: none;
+    }
+    .entry-full:hover .entry-toggle { color: var(--ink-muted); }
+    .toggle-icon { display: inline-block; transition: transform 0.3s ease; }
+    .entry-full.open .toggle-icon { transform: rotate(45deg); }
+    .entry-full.open .entry-toggle { color: var(--accent); }
+
+    /* Slim entry */
+    .entry-slim {
+      border-top: 1px solid rgba(15,15,14,0.05);
+      padding-top: 22px; padding-bottom: 22px;
+      cursor: pointer;
+    }
+    .entry-slim-row {
+      display: grid; grid-template-columns: 1fr auto;
+      align-items: baseline; gap: 16px;
+    }
+    .entry-slim .entry-company {
+      font-family: 'Cormorant', serif;
+      font-weight: 300;
+      font-size: clamp(17px, 1.8vw, 22px);
+      color: var(--ink-muted); transition: color 0.25s;
+    }
+    .entry-slim:hover .entry-company { color: var(--accent); }
+    .entry-slim-period {
+      font-size: 11px; color: var(--ink-faint);
+      letter-spacing: 0.1em; text-align: right; white-space: nowrap;
+    }
+    .entry-role-inline { font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+    .entry-slim-detail {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    .entry-slim-detail.open { max-height: 200px; }
+    .entry-slim-detail p {
+      font-size: 13px; line-height: 1.7;
+      color: var(--ink-muted); padding-top: 10px; max-width: 580px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline { padding: 0 24px 80px; grid-template-columns: 48px 1fr; }
+      .timeline::before { left: calc(24px + 48px); }
+      .year-stamp { font-size: 10px; padding-right: 12px; }
+      .entry { padding-left: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="cursor-orb"></div>
+  <div id="cursor-dot"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo">AD</a>
+    <ul class="nav-links">
+      <li><a href="experience.html" class="active">Experience</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="cv.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1 class="page-title">Experience</h1>
+    <p class="page-subtitle">Finance · AI · Strategy</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="year-stamp">2024</div>
+    <div class="entry entry-full" onclick="toggleEntry(this)">
+      <div class="entry-header">
+        <div>
+          <div class="entry-company">Columbia Business School</div>
+          <div class="entry-role">MBA, Finance · 2024 – 2026</div>
+        </div>
+        <span class="entry-tag">Education</span>
+      </div>
+      <p class="entry-summary">Pursuing an MBA focused on <strong>quantitative finance and AI systems</strong>. VP of Quant Markets & Trading; Teaching Assistant across four courses. Dean's List · Three Cairns Fellow · Glenn Hubbard Scholar · GMAT 760 (99th %ile).</p>
+      <div class="entry-bullets"><ul>
+        <li>Built ML-based weather risk prediction system for real-time clean energy scenario modelling at Leyden Analytics</li>
+        <li>Designed LLM-powered automation platform for semiconductor design workflows across hardware engineering teams</li>
+        <li>VP – Quant Markets & Trading; Investment Management Association, Tech Club, AI Club</li>
+        <li>Teaching Assistant: Corporate Finance, Investment Portfolio Management, Financial Economics, Operations Management</li>
+      </ul></div>
+      <span class="entry-toggle"><span class="toggle-icon">+</span> Details</span>
+    </div>
+
+    <div class="year-stamp">2025</div>
+    <div class="entry entry-slim" onclick="toggleSlim(this)">
+      <div class="entry-slim-row">
+        <div>
+          <div class="entry-company">Heraion</div>
+          <div class="entry-role-inline">Co-founder · AI reasoning for analog circuit design · 2025 – Present</div>
+        </div>
+        <span class="entry-tag">Venture</span>
+      </div>
+      <div class="entry-slim-detail">
+        <p>LLM-powered plugin for Cadence/Synopsys EDA tools that accelerates analog design and verification — automating testbenches, explaining simulation results, and proposing design changes while keeping engineers in control. $1B TAM; enterprise per-seat licensing model.</p>
+      </div>
+    </div>
+
+    <div class="year-stamp"></div>
+    <div class="entry entry-full" onclick="toggleEntry(this)">
+      <div class="entry-header">
+        <div>
+          <div class="entry-company">Nephron Research</div>
+          <div class="entry-role">GenAI Systems Consultant · Healthcare Equity Research · Fall 2025</div>
+        </div>
+        <span class="entry-tag">Work</span>
+      </div>
+      <p class="entry-summary">Architected and deployed an <strong>LLM analyst chatbot</strong> using RAG pipelines for dynamic retrieval and summarisation of research and financial datasets for healthcare-focused clients.</p>
+      <div class="entry-bullets"><ul>
+        <li>Led end-to-end AI integration for dynamic retrieval and summarisation of financial research datasets</li>
+        <li>Delivered technical onboarding and documentation ensuring adoption across cross-functional enterprise users</li>
+      </ul></div>
+      <span class="entry-toggle"><span class="toggle-icon">+</span> Details</span>
+    </div>
+
+    <div class="year-stamp"></div>
+    <div class="entry entry-full" onclick="toggleEntry(this)">
+      <div class="entry-header">
+        <div>
+          <div class="entry-company">Valinor Group</div>
+          <div class="entry-role">Summer Investment Associate · Private Credit & Underwriting · Summer 2025</div>
+        </div>
+        <span class="entry-tag">Work</span>
+      </div>
+      <p class="entry-summary">Built <strong>underwriting models and quantitative frameworks</strong> for multi-million dollar private credit transactions across direct lending, co-investment, and fund opportunities.</p>
+      <div class="entry-bullets"><ul>
+        <li>Built financial tools supporting sourcing, underwriting, execution, and monitoring of credit investments</li>
+        <li>Researched fintech and AI use cases to augment credit strategies and inform specialty finance opportunities</li>
+      </ul></div>
+      <span class="entry-toggle"><span class="toggle-icon">+</span> Details</span>
+    </div>
+
+    <div class="year-stamp">2022</div>
+    <div class="entry entry-full" onclick="toggleEntry(this)">
+      <div class="entry-header">
+        <div>
+          <div class="entry-company">Goldman Sachs</div>
+          <div class="entry-role">Associate · Market Risk Strats · Global FX · 2022 – 2024</div>
+        </div>
+        <span class="entry-tag">Work</span>
+      </div>
+      <p class="entry-summary">Quantitative market risk research across <strong>FX, commodities, and emerging asset classes</strong>. Built stress testing, VaR models, and the firm's first crypto spot and volatility risk models.</p>
+      <div class="entry-bullets"><ul>
+        <li>Analysed macro-driven hedging strategies across FX and commodity portfolios — LatAm, China, Russia exposure</li>
+        <li>Maintained stress testing and VaR models using statistical analysis of global market data across 150+ countries</li>
+        <li>Collaborated on firm's first crypto spot and volatility risk models across emerging asset classes</li>
+        <li>Standardised regulatory processes for risk identification and limit setting, reducing board-level breach escalations by 55%</li>
+      </ul></div>
+      <span class="entry-toggle"><span class="toggle-icon">+</span> Details</span>
+    </div>
+
+    <div class="year-stamp">2020</div>
+    <div class="entry entry-full" onclick="toggleEntry(this)">
+      <div class="entry-header">
+        <div>
+          <div class="entry-company">American Express</div>
+          <div class="entry-role">Analyst · Corporate Credit Risk Strategy & Decision Science · 2020 – 2022</div>
+        </div>
+        <span class="entry-tag">Work</span>
+      </div>
+      <p class="entry-summary">Built statistical models on large-scale financial datasets to <strong>eliminate $2B+ in speculative losses</strong> and engineer predictive risk variables deployed globally across AmEx products.</p>
+      <div class="entry-bullets"><ul>
+        <li>Developed models to identify and eliminate losses due to wilful defaulters, reducing $2BN+ in speculative losses</li>
+        <li>Engineered predictive risk variables using client file, transaction, and credit bureau data for corporate markets</li>
+        <li>Devised global controls for application and transaction approval across AmEx products and services</li>
+        <li>Modelled risk for $5B projected non-card lending market; led team building digital footprint-based risk scoring engine</li>
+      </ul></div>
+      <span class="entry-toggle"><span class="toggle-icon">+</span> Details</span>
+    </div>
+
+    <div class="year-stamp">2016</div>
+    <div class="entry entry-full" onclick="toggleEntry(this)">
+      <div class="entry-header">
+        <div>
+          <div class="entry-company">IIT Delhi</div>
+          <div class="entry-role">B.Tech, Mechanical Engineering · Minor in Economics · GPA 8.54/10 · 2016 – 2020</div>
+        </div>
+        <span class="entry-tag">Education</span>
+      </div>
+      <p class="entry-summary">Graduated with distinction. <strong>JEE Main All India Rank 321</strong> (top 0.01 percentile). Top 15% academic merit; Outstanding Contribution to Cultural Activities.</p>
+      <div class="entry-bullets"><ul>
+        <li>B.Tech thesis under Prof. Nomesh Bolia — operations research analysis of Mobility as a Service</li>
+        <li>Economics projects under Prof. Saptarshi Mukherjee and Prof. SB Paul</li>
+        <li>Visiting Research Scholar, Ohio State University — EV power modular layout under Prof. Anant Agarwal (Summer 2018)</li>
+        <li>Summer Analyst, Daimler AG, Kawasaki — supplier costing analytics, Cost Engineering (Summer 2019)</li>
+        <li>Chief Editor, Board for Student Publications</li>
+      </ul></div>
+      <span class="entry-toggle"><span class="toggle-icon">+</span> Details</span>
+    </div>
+
+  </div>
+
+  <footer>
+    <span class="footer-name">Arundhati Dixit</span>
+    <span class="footer-year">© 2026</span>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => initScrollReveal('.entry'));
+    function toggleEntry(el) {
+      el.classList.toggle('open');
+      el.querySelector('.entry-bullets').classList.toggle('open');
+    }
+    function toggleSlim(el) {
+      el.querySelector('.entry-slim-detail').classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
