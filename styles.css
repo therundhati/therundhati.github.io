@@ -21,7 +21,7 @@ body {
 /* ── CURSOR ── */
 #cursor-orb {
   position: fixed;
-  width: 44px; height: 44px;
+  width: 30px; height: 30px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255,100,160,0.28) 0%, rgba(255,100,160,0.0) 70%);
   box-shadow: 0 0 32px 14px rgba(255,100,160,0.10), 0 0 80px 30px rgba(255,100,160,0.04);
