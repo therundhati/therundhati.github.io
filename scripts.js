@@ -1,30 +1,15 @@
 // ── CURSOR ──
-const orb = document.getElementById('cursor-orb');
-const dot = document.getElementById('cursor-dot');
-let orbX = window.innerWidth / 2, orbY = window.innerHeight / 2;
-let mouseX = orbX, mouseY = orbY;
+const cross = document.getElementById('cursor-cross');
 
 document.addEventListener('mousemove', e => {
-  mouseX = e.clientX; mouseY = e.clientY;
-  dot.style.left = mouseX + 'px';
-  dot.style.top  = mouseY + 'px';
-  // hero glow if present
-  const glow = document.getElementById('heroGlow');
-  if (glow) { glow.style.left = mouseX + 'px'; glow.style.top = mouseY + 'px'; }
+  cross.style.left = e.clientX + 'px';
+  cross.style.top  = e.clientY + 'px';
 });
-
-(function animateOrb() {
-  orbX += (mouseX - orbX) * 0.12;
-  orbY += (mouseY - orbY) * 0.12;
-  orb.style.left = orbX + 'px';
-  orb.style.top  = orbY + 'px';
-  requestAnimationFrame(animateOrb);
-})();
 
 function initCursorTargets() {
   document.querySelectorAll('a, button, .entry-full, .entry-slim, .group-header, .accordion-item').forEach(el => {
-    el.addEventListener('mouseenter', () => { orb.style.width = '72px'; orb.style.height = '72px'; });
-    el.addEventListener('mouseleave', () => { orb.style.width = '44px'; orb.style.height = '44px'; });
+    el.addEventListener('mouseenter', () => cross.classList.add('hovered'));
+    el.addEventListener('mouseleave', () => cross.classList.remove('hovered'));
   });
 }
 document.addEventListener('DOMContentLoaded', initCursorTargets);
